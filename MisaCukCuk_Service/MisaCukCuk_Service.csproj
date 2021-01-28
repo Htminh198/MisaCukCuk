@@ -7,8 +7,6 @@
   <ItemGroup>
     <Folder Include="CustomerService\" />
     <Folder Include="CustomerGroupService\" />
-    <Folder Include="DepartmentService\" />
-    <Folder Include="PositionService\" />
   </ItemGroup>
 
   <ItemGroup>
