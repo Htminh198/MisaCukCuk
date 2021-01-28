@@ -79,6 +79,10 @@ namespace MisaCukCuk_BackEnd.Controllers
                     if (check == 1)
                     {
                         var rs = await _Rep.Create(Request);
+                        if (rs == false)
+                        {
+                            return BadRequest("Thêm mới thất bại!");
+                        }
                         return Ok("Thêm mới thành công!");
                     }
                     return BadRequest("Có lỗi xảy ra!");

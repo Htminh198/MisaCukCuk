@@ -9,7 +9,9 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using MisaCukCuk_Data;
+using MisaCukCuk_Service.DepartmentService;
 using MisaCukCuk_Service.EmployeeService;
+using MisaCukCuk_Service.PositionService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,6 +35,8 @@ namespace MisaCukCuk_BackEnd
             services.AddDbContext<MisaCukCukDbContext>(option =>
             option.UseSqlServer(Configuration.GetConnectionString("TestApiDatabase")));
             services.AddTransient<IEmployeeRepository, EmployeeRepository>();
+            services.AddTransient<IDepartmentRepository, DepartmentRepository>();
+            services.AddTransient<IPositionRepository, PositionRepository>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
