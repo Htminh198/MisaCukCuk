@@ -64,5 +64,49 @@ namespace MisaCukCuk_BackEnd.Controllers
                 return BadRequest("Có lỗi xảy ra!");
             }
         }
+        [HttpPost("Create")]
+        public async Task<IActionResult> Create([FromForm]EmployeeRequest Request)
+        {
+            try
+            {
+                var check = await _Rep.CheckEmployeeCode(Request);
+                if(check == 0)
+                {
+                    return BadRequest("Trùng mã nhân viên!");
+                }
+                else
+                {
+                    if (check == 1)
+                    {
+                        var rs = await _Rep.Create(Request);
+                        return Ok("Thêm mới thành công!");
+                    }
+                    return BadRequest("Có lỗi xảy ra!");
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return BadRequest("Có lỗi xảy ra!");
+            }
+        }
+        [HttpPut("Update")]
+        public async Task<IActionResult> Update([FromForm] EmployeeRequest Request)
+        {
+            try
+            {
+                var rs = await _Rep.Update(Request);
+                if(rs == false)
+                {
+                    return BadRequest("Cập nhập thất bại!");
+                }
+                return Ok("Cập nhập thành công!");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return BadRequest("Có lỗi xảy ra!");
+            }
+        }
     }
 }

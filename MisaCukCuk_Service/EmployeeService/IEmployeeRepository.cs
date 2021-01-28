@@ -10,9 +10,9 @@ namespace MisaCukCuk_Service.EmployeeService
     {
         public Task<bool> Create(EmployeeRequest Request);
         public Task<bool> Delete(string id);
-        public Task<bool> Update(/*EmployeeRequest request,*/ Employee obj);
+        public Task<bool> Update(EmployeeRequest Request);
         public Task<List<EmployeeResponse>> GetAll();
         public Task<EmployeeResponse> GetByID(string id);
-        public Task<EmployeeResponse> CheckEmployeeCode(EmployeeRequest Request);
+        public Task<int> CheckEmployeeCode(EmployeeRequest Request);
     }
 }
