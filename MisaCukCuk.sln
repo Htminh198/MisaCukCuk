@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MisaCukCuk_Data", "MisaCukC
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MisaCukCuk_BackEnd", "MisaCukCuk_BackEnd\MisaCukCuk_BackEnd.csproj", "{C0ADC8B2-09E0-433D-AF13-82A799ED58C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MisaCukCuk_Service", "MisaCukCuk_Service\MisaCukCuk_Service.csproj", "{9571E53A-BAAE-4B03-95CD-ECBDC8910B13}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MisaCukCuk_Service", "MisaCukCuk_Service\MisaCukCuk_Service.csproj", "{9571E53A-BAAE-4B03-95CD-ECBDC8910B13}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
