@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MisaCukCuk_Data\MisaCukCuk_Data.csproj" />
+    <ProjectReference Include="..\MisaCukCuk_Enum\MisaCukCuk_Enum.csproj" />
   </ItemGroup>
 
 </Project>

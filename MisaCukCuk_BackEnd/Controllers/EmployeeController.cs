@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MisaCukCuk_Enum;
 using MisaCukCuk_Service.EmployeeService;
 using System;
 using System.Collections.Generic;
@@ -18,11 +19,16 @@ namespace MisaCukCuk_BackEnd.Controllers
             _Rep = employeeRepository;
         }
         [HttpGet("GetAll")]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAll(int pageIndex = 1, int pageSize = 15)
         {
             try
             {
-                var rs = await _Rep.GetAll();
+                GlobalFilter filter = new GlobalFilter()
+                {
+                    PageIndex = pageIndex,
+                    PageSize = pageSize > 0 ? pageSize : int.MaxValue,
+                };
+                var rs = await _Rep.GetAll(filter);
                 return Ok(rs);
             }
             catch (Exception e)
@@ -34,7 +40,7 @@ namespace MisaCukCuk_BackEnd.Controllers
         }
         [HttpGet("GetByID")]
         public async Task<IActionResult> GetByID(string id)
-        {
+        { 
             try
             {
                 var rs = await _Rep.GetByID(id);

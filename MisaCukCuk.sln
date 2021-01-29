@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MisaCukCuk_BackEnd", "MisaC
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MisaCukCuk_Service", "MisaCukCuk_Service\MisaCukCuk_Service.csproj", "{9571E53A-BAAE-4B03-95CD-ECBDC8910B13}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MisaCukCuk_Enum", "MisaCukCuk_Enum\MisaCukCuk_Enum.csproj", "{67DE5D29-6CF6-422A-A20D-486DB71600A9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{9571E53A-BAAE-4B03-95CD-ECBDC8910B13}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9571E53A-BAAE-4B03-95CD-ECBDC8910B13}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9571E53A-BAAE-4B03-95CD-ECBDC8910B13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67DE5D29-6CF6-422A-A20D-486DB71600A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67DE5D29-6CF6-422A-A20D-486DB71600A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67DE5D29-6CF6-422A-A20D-486DB71600A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67DE5D29-6CF6-422A-A20D-486DB71600A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

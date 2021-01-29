@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MisaCukCuk_Data;
 using MisaCukCuk_Data.Entities;
+using MisaCukCuk_Enum;
+using MisaCukCuk_Enum.PageList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -70,10 +72,11 @@ namespace MisaCukCuk_Service.EmployeeService
             }
         }
 
-        public async Task<List<EmployeeResponse>> GetAll()
+        public async Task<IPagedList<EmployeeResponse>> GetAll(GlobalFilter filter)
         {
             var rs = await _db.Employee.Select(x => new EmployeeResponse()
             {
+
                 EmployeeId = x.EmployeeId,
                 EmployeeCode = x.EmployeeCode,
                 FullName = x.FullName,
@@ -91,7 +94,7 @@ namespace MisaCukCuk_Service.EmployeeService
                 JoinDate = x.JoinDate,
                 JobStatus = x.JobStatus,
             }).ToListAsync();
-            return rs;
+            return new PagedList<EmployeeResponse>(rs, filter.PageIndex, filter.PageSize);
         }
 
         public async Task<EmployeeResponse> GetByID(string id)

@@ -1,4 +1,6 @@
 ﻿using MisaCukCuk_Data.Entities;
+using MisaCukCuk_Enum;
+using MisaCukCuk_Enum.PageList;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -11,7 +13,7 @@ namespace MisaCukCuk_Service.EmployeeService
         public Task<bool> Create(EmployeeRequest Request);
         public Task<bool> Delete(string id);
         public Task<bool> Update(EmployeeRequest Request);
-        public Task<List<EmployeeResponse>> GetAll();
+        public Task<IPagedList<EmployeeResponse>> GetAll(GlobalFilter filter);
         public Task<EmployeeResponse> GetByID(string id);
         public Task<int> CheckEmployeeCode(EmployeeRequest Request);
     }
